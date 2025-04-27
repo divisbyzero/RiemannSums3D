@@ -1,14 +1,14 @@
 [![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/divisbyzero/RiemannSums3D/)
 [![Download STL](https://img.shields.io/badge/Download-STL%20Files-orange?logo=3d-printing)](https://github.com/divisbyzero/RiemannSums3D/releases)
 
-# Calculus 3D Models: Riemann Sum Approximations for Double Integrals
+# Riemann Sum Approximations for Double Integrals
 
 This repository contains an OpenSCAD file for illustrating **Riemann sum approximations** of double integrals, commonly taught in multivariable calculus courses.
 
 ## Mathematical Description
 
 - The model approximates the volume under a surface \( z = f(x, y) \) over a rectangular domain.
-- The surface is approximated by stacked rectangular prisms ("Riemann sum boxes").
+- The surface is approximated by rectangular prisms ("Riemann sum boxes").
 - Each prism height is determined by sampling the function \( f(x, y) \) at the center of its rectangle.
 
 ## How to Use
