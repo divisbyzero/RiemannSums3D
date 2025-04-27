@@ -1,7 +1,7 @@
 [![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/divisbyzero/RiemannSums3D/)
 [![Download STL](https://img.shields.io/badge/Download-STL%20Files-orange?logo=3d-printing)](https://github.com/divisbyzero/RiemannSums3D/releases)
 
-# Riemann Sum Approximations for Double Integrals
+# Calculus 3D Models: Riemann Sum for Functions of Two Variables
 
 This repository contains an OpenSCAD file for illustrating **Riemann sum approximations** of double integrals, commonly taught in multivariable calculus courses.
 
