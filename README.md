@@ -1,15 +1,26 @@
 [![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/divisbyzero/RiemannSums3D/)
 [![Download STL](https://img.shields.io/badge/Download-STL%20Files-orange?logo=3d-printing)](https://github.com/divisbyzero/RiemannSums3D/releases)
 
-# Calculus 3D Models: Riemann Sum for Functions of Two Variables
+# Calculus 3D Models: Riemann Sum Approximations for Double Integrals
 
-This repository contains an OpenSCAD file for illustrating **Riemann sum approximations** of double integrals, commonly taught in multivariable calculus courses.
+This repository contains an OpenSCAD file for illustrating **Riemann sum approximations** of double integrals, commonly taught in multivariable calculus courses. It also has stl files for two sample models: the monkey saddle and the sombrero function.
 
 ## Mathematical Description
 
 - The model approximates the volume under a surface \( z = f(x, y) \) over a rectangular domain.
 - The surface is approximated by rectangular prisms ("Riemann sum boxes").
 - Each prism height is determined by sampling the function \( f(x, y) \) at the center of its rectangle.
+
+<p align="center">
+  <img src="SombreroFunction.jpeg" alt="Sombrero function Riemann sum model" width="400">
+  <img src="MonkeySaddle.jpeg" alt="Monkey saddle Riemann sum model" width="400">
+</p>
+
+## Interactive Previews
+
+- [Monkey saddle model](MonkeySaddle.stl) (preview STL file)
+- [Sombrero function model](Sombrero.stl) (preview STL file)
+
 
 ## How to Use
 
