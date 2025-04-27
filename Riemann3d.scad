@@ -1,5 +1,5 @@
 //===================================================
-// 3D Riemann Sum for Functions of Two Variables
+// Calculus 3D Models: Riemann Sum for Functions of Two Variables
 // Author: https://github.com/divisbyzero
 // Description: 
 //    This script generates a 3D printable model of a Riemann sum approximation 
