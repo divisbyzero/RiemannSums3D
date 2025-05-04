@@ -1,6 +1,3 @@
-[![GitHub](https://img.shields.io/badge/OpenSCAD-View%20Source-blue?logo=openscad)](https://github.com/divisbyzero/RiemannSums3D/)
-[![Download STL](https://img.shields.io/badge/Download-STL%20Files-orange?logo=3d-printing)](https://github.com/divisbyzero/RiemannSums3D/releases)
-
 # Calculus 3D Models: Riemann Sum Approximations for Double Integrals
 
 This repository contains an OpenSCAD file for illustrating **Riemann sum approximations** of double integrals, commonly taught in multivariable calculus courses. It also has stl files for two sample models: the monkey saddle and the sombrero function.
