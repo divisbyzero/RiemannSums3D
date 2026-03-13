@@ -22,7 +22,7 @@ targetxwidth = 80;
 // Exaggerates vertical features
 verticalscalefactor = 1.5;
 // Shifts surface upward to ensure positive heights
-verticaltranslation = 8;
+verticaltranslation = 2;
 
 /* [Domain] */
 
