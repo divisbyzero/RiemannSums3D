@@ -1,11 +1,9 @@
 # Calculus 3D Models: Riemann Sum Approximations for Double Integrals
 
-
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC--BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Made with OpenSCAD](https://img.shields.io/badge/Made%20with-OpenSCAD-yellow.svg)](https://openscad.org/)
 [![3D Printable](https://img.shields.io/badge/3D-Printable-blue.svg)]()
 [![Last Commit](https://img.shields.io/github/last-commit/divisbyzero/RiemannSums3D)](https://github.com/divisbyzero/RiemannSums3D/commits/main)
-
 
 This repository contains an OpenSCAD file for illustrating **Riemann sum approximations** of double integrals, commonly taught in multivariable calculus courses. It also has stl files for two sample models: the monkey saddle and the sombrero function.
 
@@ -25,23 +23,27 @@ This repository contains an OpenSCAD file for illustrating **Riemann sum approxi
 - [Monkey saddle model](MonkeySaddle.stl) (preview STL file)
 - [Sombrero function model](Sombrero.stl) (preview STL file)
 
-
 ## How to Use
 
 - Open the `.scad` file (`Riemann3d.scad`) in [OpenSCAD](https://openscad.org/).
+- Choose one preset import near the top of `Riemann3d.scad`:
+  - `include <presets/monkey_saddle.scad>;`
+  - `include <presets/sombrero.scad>;`
 - Customize parameters:
-  - `f(x, y)`: Define the function you want to approximate.
-  - `xmin`, `xmax`, `ymin`, `ymax`: Set the domain for \( x \) and \( y \).
+  - In `Riemann3d.scad`: `nx`, `ny`, and `targetxwidth`.
+  - In the selected preset file: `f(x, y)`, `xmin`, `xmax`, `ymin`, `ymax`, `verticalscalefactor`, and `verticaltranslation`.
+  - In `presets/sombrero.scad`: `k` controls oscillation/decay.
   - `nx`, `ny`: Number of subdivisions in the \( x \) and \( y \) directions.
-  - `verticalscalefactor`: Exaggerate vertical features for easier visualization.
-  - `verticaltranslation`: Shift the surface upward to ensure positive heights.
   - `targetxwidth`: Set the final width of the printed model (in millimeters); other dimensions scale proportionally.
+- OpenSCAD Customizer sliders are included for key numeric parameters.
 - Render the model.
 - Export the model to STL for 3D printing or visualization.
 
 ## Files Included
 
 - `Riemann3d.scad` — Main customizable OpenSCAD model for creating Riemann sum approximations.
+- `presets/monkey_saddle.scad` — Monkey saddle preset (function, domain, vertical scaling settings).
+- `presets/sombrero.scad` — Sombrero preset (function, domain, vertical scaling settings).
 - `MonkeySaddle.stl` — STL file generated using the monkey saddle example.
 - `Sombrero.stl` — STL file generated using the sombrero function example.
 

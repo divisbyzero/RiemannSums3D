@@ -12,36 +12,21 @@
 // User Settings
 //----------------------------
 
-// Define the function f(x, y) to approximate
-// Example: Monkey saddle
-function f(x, y) = x*x*x - 3*x*y*y;   
-
-// Define the domain
-xmin = -2.5;
-xmax = 2.5;
-ymin = -2.5;
-ymax = 2.5;
-
-// Alternate example
-// k = 0.18;
-// function f(x, y) = exp(-k * sqrt(x*x + y*y)) * cos(sqrt(x*x + y*y) * (180 / PI));
-// xmin = -4*PI;
-// xmax = 4*PI;
-// ymin = -4*PI;
-// ymax = 4*PI;
+// Choose ONE preset to include.
+// Uncomment one line and keep the other commented.
+include <presets/monkey_saddle.scad>;
+// include <presets/sombrero.scad>;
 
 
 // Number of subdivisions (higher = finer resolution)
-nx = 29;
-ny = 29;
+nx = 29;  // [5:1:120]
+ny = 29;  // [5:1:120]
 
 // Final model width in millimeters (x direction)
 // Height and depth are scaled proportionally
-targetxwidth = 80;
+targetxwidth = 80;  // [20:1:200]
 
-// Vertical scaling parameters
-verticalscalefactor = 0.04;   // Exaggerates vertical features
-verticaltranslation = 20;     // Shifts surface upward to ensure positive heights
+// verticalscalefactor and verticaltranslation are defined in the selected preset file.
 
 //----------------------------
 // Derived Scaling Parameters (Do Not Edit Unless Needed)
