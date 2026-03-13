@@ -2,6 +2,26 @@
 // Sombrero: Riemann Sum Model
 // Main entry file with all user-editable parameters.
 //===================================================
+/* [Function Parameters] */
+
+// Decay constant for the sombrero profile.
+k = 0.18;
+
+function f(x, y) = exp(-k * sqrt(x*x + y*y)) * cos(sqrt(x*x + y*y) * (180 / PI));
+
+/* [Display] */
+
+// true = Riemann sum prisms, false = smooth function surface
+render_riemann = false;
+
+/* [Scaling] */
+
+// Final model width in mm (x direction); height and depth scale proportionally
+targetxwidth = 80;
+// Exaggerates vertical features
+verticalscalefactor = 10.0;
+// Shifts surface upward to ensure positive heights
+verticaltranslation = 25;
 
 /* [Domain] */
 
@@ -20,21 +40,9 @@ ymax = 4*PI;
 nx = 29;
 // Number of subdivisions in y
 ny = 29;
-
-/* [Scaling] */
-
-// Final model width in mm (x direction); height and depth scale proportionally
-targetxwidth = 80;
-// Exaggerates vertical features
-verticalscalefactor = 10.0;
-// Shifts surface upward to ensure positive heights
-verticaltranslation = 8;
-
-/* [Function Parameters] */
-
-// Decay constant for the sombrero profile.
-k = 0.18;
-
-function f(x, y) = exp(-k * sqrt(x*x + y*y)) * cos(sqrt(x*x + y*y) * (180 / PI));
+// Smooth-mode subdivisions in x (used only when render_riemann = false)
+smooth_nx = 180;
+// Smooth-mode subdivisions in y (used only when render_riemann = false)
+smooth_ny = 180;
 
 include <Riemann3d.scad>;

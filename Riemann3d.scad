@@ -13,7 +13,8 @@
 //----------------------------
 // This file expects these values to be defined by the including file:
 // f(x, y), xmin, xmax, ymin, ymax, nx, ny, targetxwidth,
-// verticalscalefactor, verticaltranslation.
+// verticalscalefactor, verticaltranslation, render_riemann.
+// Optional smooth-mode controls: smooth_nx, smooth_ny.
 
 //----------------------------
 // Derived Scaling Parameters (Do Not Edit Unless Needed)
@@ -65,14 +66,73 @@ module riemann_surface() {
 }
 
 //----------------------------
+// Smooth Surface Assembly
+//----------------------------
+module smooth_cell(i, j) {
+    smooth_nx_eff = is_undef(smooth_nx) ? max(2, nx * 4) : max(2, smooth_nx);
+    smooth_ny_eff = is_undef(smooth_ny) ? max(2, ny * 4) : max(2, smooth_ny);
+    dx_smooth_math = domain_width / smooth_nx_eff;
+    dy_smooth_math = domain_depth / smooth_ny_eff;
+
+    x0 = xmin + i * dx_smooth_math;
+    x1 = x0 + dx_smooth_math;
+    y0 = ymin + j * dy_smooth_math;
+    y1 = y0 + dy_smooth_math;
+
+    x0p = (x0 - xmin) * xscale;
+    x1p = (x1 - xmin) * xscale;
+    y0p = (y0 - ymin) * yscale;
+    y1p = (y1 - ymin) * yscale;
+
+    z00 = g(x0, y0);
+    z10 = g(x1, y0);
+    z11 = g(x1, y1);
+    z01 = g(x0, y1);
+
+    // Solid cell with bilinear-style top sampled at corners.
+    polyhedron(
+        points = [
+            [x0p, y0p, z00],
+            [x1p, y0p, z10],
+            [x1p, y1p, z11],
+            [x0p, y1p, z01],
+            [x0p, y0p, 0],
+            [x1p, y0p, 0],
+            [x1p, y1p, 0],
+            [x0p, y1p, 0]
+        ],
+        faces = [
+            [0, 1, 2], [0, 2, 3],
+            [4, 6, 5], [4, 7, 6],
+            [0, 4, 5], [0, 5, 1],
+            [1, 5, 6], [1, 6, 2],
+            [2, 6, 7], [2, 7, 3],
+            [3, 7, 4], [3, 4, 0]
+        ]
+    );
+}
+
+module smooth_surface() {
+    smooth_nx_eff = is_undef(smooth_nx) ? max(2, nx * 4) : max(2, smooth_nx);
+    smooth_ny_eff = is_undef(smooth_ny) ? max(2, ny * 4) : max(2, smooth_ny);
+
+    for (i = [0 : smooth_nx_eff - 1])
+        for (j = [0 : smooth_ny_eff - 1])
+            smooth_cell(i, j);
+}
+
+//----------------------------
 // Final Model Assembly
 //----------------------------
 module final_model() {
-    union() {
-        // Thin floor for printability and watertightness (1 mm thick)
-        cube([targetxwidth, targetywidth, 1], center = false);
-        riemann_surface();
-    }
+    if (render_riemann)
+        union() {
+            // Thin floor for printability and watertightness (1 mm thick)
+            cube([targetxwidth, targetywidth, 1], center = false);
+            riemann_surface();
+        }
+    else
+        smooth_surface();
 }
 
 //----------------------------
