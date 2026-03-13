@@ -26,24 +26,23 @@ This repository contains an OpenSCAD file for illustrating **Riemann sum approxi
 ## How to Use
 
 - Open the `.scad` file (`Riemann3d.scad`) in [OpenSCAD](https://openscad.org/).
-- Choose one preset import near the top of `Riemann3d.scad`:
-  - `include <presets/monkey_saddle.scad>;`
-  - `include <presets/sombrero.scad>;`
+- Choose one function import near the top of `Riemann3d.scad`:
+  - `use <functions/monkey_saddle.scad>;`
+  - `use <functions/sombrero.scad>;`
 - Customize parameters:
-  - In `Riemann3d.scad`: `nx`, `ny`, and `targetxwidth`.
-  - In the selected preset file: `f(x, y)`, `xmin`, `xmax`, `ymin`, `ymax`, `verticalscalefactor`, and `verticaltranslation`.
-  - In `presets/sombrero.scad`: `k` controls oscillation/decay.
+  - In `Riemann3d.scad`: `xmin`, `xmax`, `ymin`, `ymax`, `verticalscalefactor`, `verticaltranslation`, `k`, `nx`, `ny`, and `targetxwidth`.
+  - In the selected function file: `f(x, y)` plus default value functions for domain and scaling.
   - `nx`, `ny`: Number of subdivisions in the \( x \) and \( y \) directions.
   - `targetxwidth`: Set the final width of the printed model (in millimeters); other dimensions scale proportionally.
-- OpenSCAD Customizer sliders are included for key numeric parameters.
+- OpenSCAD Customizer sliders are defined in `Riemann3d.scad`, so parameters remain editable when using imported function files.
 - Render the model.
 - Export the model to STL for 3D printing or visualization.
 
 ## Files Included
 
 - `Riemann3d.scad` — Main customizable OpenSCAD model for creating Riemann sum approximations.
-- `presets/monkey_saddle.scad` — Monkey saddle preset (function, domain, vertical scaling settings).
-- `presets/sombrero.scad` — Sombrero preset (function, domain, vertical scaling settings).
+- `functions/monkey_saddle.scad` — Monkey saddle function and default parameters.
+- `functions/sombrero.scad` — Sombrero function and default parameters.
 - `MonkeySaddle.stl` — STL file generated using the monkey saddle example.
 - `Sombrero.stl` — STL file generated using the sombrero function example.
 
