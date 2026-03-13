@@ -9,45 +9,11 @@
 //===================================================
 
 //----------------------------
-// User Settings
+// Shared Engine
 //----------------------------
-
-// Choose ONE function file to include.
-// Uncomment one line and keep the other commented.
-include <functions/monkey_saddle.scad>;
-// include <functions/sombrero.scad>;
-
-/* [Domain] */
-
-// Minimum x value
-xmin = -2.5;
-// Maximum x value
-xmax = 2.5;
-// Minimum y value
-ymin = -2.5;
-// Maximum y value
-ymax = 2.5;
-
-/* [Subdivisions] */
-
-// Number of subdivisions in x (higher = finer resolution)
-nx = 29;
-// Number of subdivisions in y
-ny = 29;
-
-/* [Scaling] */
-
-// Final model width in mm (x direction); height and depth scale proportionally
-targetxwidth = 80;
-// Exaggerates vertical features
-verticalscalefactor = 0.04;
-// Shifts surface upward to ensure positive heights
-verticaltranslation = 20;
-
-/* [Function Parameters] */
-
-// Decay constant (used by sombrero; ignored by monkey saddle)
-k = 0.18;
+// This file expects these values to be defined by the including file:
+// f(x, y), xmin, xmax, ymin, ymax, nx, ny, targetxwidth,
+// verticalscalefactor, verticaltranslation.
 
 //----------------------------
 // Derived Scaling Parameters (Do Not Edit Unless Needed)

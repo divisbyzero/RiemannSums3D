@@ -25,24 +25,23 @@ This repository contains an OpenSCAD file for illustrating **Riemann sum approxi
 
 ## How to Use
 
-- Open the `.scad` file (`Riemann3d.scad`) in [OpenSCAD](https://openscad.org/).
-- Choose one function import near the top of `Riemann3d.scad`:
-  - `use <functions/monkey_saddle.scad>;`
-  - `use <functions/sombrero.scad>;`
+- Open one of the main function files in [OpenSCAD](https://openscad.org/):
+  - `monkey_saddle.scad`
+  - `sombrero.scad`
 - Customize parameters:
-  - In `Riemann3d.scad`: `xmin`, `xmax`, `ymin`, `ymax`, `verticalscalefactor`, `verticaltranslation`, `k`, `nx`, `ny`, and `targetxwidth`.
-  - In the selected function file: `f(x, y)` plus default value functions for domain and scaling.
+  - In the selected main function file: `xmin`, `xmax`, `ymin`, `ymax`, `nx`, `ny`, `targetxwidth`, `verticalscalefactor`, `verticaltranslation`, and `k`.
+  - The function definition `f(x, y)` is also in that same file.
   - `nx`, `ny`: Number of subdivisions in the \( x \) and \( y \) directions.
   - `targetxwidth`: Set the final width of the printed model (in millimeters); other dimensions scale proportionally.
-- OpenSCAD Customizer sliders are defined in `Riemann3d.scad`, so parameters remain editable when using imported function files.
+- `Riemann3d.scad` is now a shared engine file that is included by each function file.
 - Render the model.
 - Export the model to STL for 3D printing or visualization.
 
 ## Files Included
 
-- `Riemann3d.scad` — Main customizable OpenSCAD model for creating Riemann sum approximations.
-- `functions/monkey_saddle.scad` — Monkey saddle function and default parameters.
-- `functions/sombrero.scad` — Sombrero function and default parameters.
+- `monkey_saddle.scad` — Main monkey saddle model file with all editable parameters and function definition.
+- `sombrero.scad` — Main sombrero model file with all editable parameters and function definition.
+- `Riemann3d.scad` — Shared Riemann surface engine included by the function files.
 - `MonkeySaddle.stl` — STL file generated using the monkey saddle example.
 - `Sombrero.stl` — STL file generated using the sombrero function example.
 
