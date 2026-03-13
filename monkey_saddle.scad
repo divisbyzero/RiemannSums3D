@@ -1,46 +1,31 @@
 //===================================================
-// Monkey Saddle: Riemann Sum Model
+// Monkey Saddle
 // Main entry file with all user-editable parameters.
 //===================================================
 
-/* [Function Parameters] */
-
+/* [Function] */
+// f(x, y) = x^3 - 3xy^2
 function f(x, y) = x*x*x - 3*x*y*y;
 
-/* [Display] */
-
+/* [Output type] */
 // true = Riemann sum prisms, false = smooth function surface
 render_riemann = false;
 
 /* [Scaling] */
-
-// Final model width in mm (x direction); height and depth scale proportionally
 targetxwidth = 80;
-// Exaggerates vertical features
 verticalscalefactor = 0.04;
-// Shifts surface upward to ensure positive heights
 verticaltranslation = 20;
 
 /* [Domain] */
-
-// Minimum x value
 xmin = -2.5;
-// Maximum x value
 xmax = 2.5;
-// Minimum y value
 ymin = -2.5;
-// Maximum y value
 ymax = 2.5;
 
 /* [Subdivisions] */
-
-// Number of subdivisions in x (higher = finer resolution)
 nx = 29;
-// Number of subdivisions in y
 ny = 29;
-// Smooth-mode subdivisions in x (used only when render_riemann = false)
 smooth_nx = 140;
-// Smooth-mode subdivisions in y (used only when render_riemann = false)
 smooth_ny = 140;
 
 include <Riemann3d.scad>;
