@@ -17,18 +17,18 @@ render_riemann = false;
 // Final model width in mm (x direction); height and depth scale proportionally
 targetxwidth = 80;
 verticalscalefactor = 0.5;
-verticaltranslation = 20;
+verticaltranslation = 12;
 
 /* [Domain] */
 xmin = -1;
-max = 1;
+xmax = 1;
 ymin = -1;
 ymax = 1;
 
 /* [Subdivisions] */
 nx = 29;
 ny = 29;
-smooth_nx = 200;
-smooth_ny = 200;
+smooth_nx = 100;
+smooth_ny = 100;
 
 include <Riemann3d.scad>;
