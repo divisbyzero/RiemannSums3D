@@ -42,8 +42,8 @@ nx = 29;
 // Number of subdivisions in y
 ny = 29;
 // Smooth-mode subdivisions in x (used only when render_riemann = false)
-smooth_nx = 300;
+smooth_nx = 200;
 // Smooth-mode subdivisions in y (used only when render_riemann = false)
-smooth_ny = 300;
+smooth_ny = 200;
 
 include <Riemann3d.scad>;
